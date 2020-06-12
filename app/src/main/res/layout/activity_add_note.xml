@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="请输入标题"
+        android:layout_centerHorizontal="true"/>
+
+    <!--&lt;!&ndash;时间 timepicker&ndash;&gt;-->
+    <!--<TimePicker-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_marginRight="@+id/et_title">-->
+
+    <!--</TimePicker>-->
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/et_title"
+        android:layout_centerHorizontal="true"
+        android:hint="请输入笔记内容"
+
+        />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新增笔记"
+        android:onClick="addNote"
+        android:layout_below="@+id/et_content"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

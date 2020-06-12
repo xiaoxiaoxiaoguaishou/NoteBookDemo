@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--图片按钮  android:scaleType="fitXY"图片平铺
+        android:background="#00000000"清楚图片按钮背景色-->
+        <ImageButton
+            android:id="@+id/ib_regist_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:scaleType="fitXY"
+            android:background="#00000000"
+            android:onClick="back"/>
+
+        <ImageView
+            android:id="@+id/iv_regist_bg1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/background1"
+            android:scaleType="fitXY"
+            android:layout_toRightOf="@+id/ib_regist_back"/>
+
+
+        <!--注册页面 标题-->
+        <TextView
+            android:id="@+id/tv_regist_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册页面"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="30dp"
+            android:textSize="40dp"/>
+        <!--用户名-->
+        <TextView
+            android:id="@+id/tv_regist_uname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/et_regist_uname"
+            android:layout_below="@+id/iv_regist_bg1"
+            android:layout_marginTop="56dp"
+            android:text="用户名：" />
+        <!--用户名输入框-->
+        <EditText
+            android:id="@+id/et_regist_uname"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignEnd="@+id/et_regist_upwd"
+            android:layout_below="@+id/tv_regist_uname"
+            android:layout_marginLeft="40dp"
+            android:drawableLeft="@drawable/tx"
+            android:hint="请输入你的用户名" />
+        <!--密码-->
+        <TextView
+            style="@style/regist_tv_style"
+            android:id="@+id/tv_regist_upwd"
+            android:text="密码："
+            android:layout_below="@+id/et_regist_uname"/>
+        <EditText
+            android:id="@+id/et_regist_upwd"
+            style="@style/pwd_tv_style"
+            android:layout_below="@+id/tv_regist_upwd"
+            android:hint="请输入你的密码"
+            android:inputType="textPassword" />
+
+        <!--爱好   checkbox-->
+        <LinearLayout
+            android:id="@+id/ll_hobby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/et_regist_upwd"
+            android:layout_marginLeft="40dp">
+            <CheckBox
+                android:id="@+id/cb_regist_eat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="吃饭"/>
+            <CheckBox
+                android:id="@+id/cb_regist_sleep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="睡觉"/>
+            <CheckBox
+                android:id="@+id/cb_regist_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="玩"/>
+        </LinearLayout>
+
+        <!--注册、重置、取消-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/ll_check">
+
+            <Button
+                android:id="@+id/bt_regist_regist"
+                style="@style/regist_bt_style"
+                android:onClick="regist"
+                android:text="注册" />
+            <Button
+                android:id="@+id/bt_regist_reset"
+                style="@style/regist_bt_style"
+                android:text="重置"
+                android:onClick="resetInfo"/>
+            <Button
+                android:id="@+id/bt_regist_cancel"
+                style="@style/regist_bt_style"
+                android:text="取消" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_hobby"
+            android:orientation="horizontal"
+            android:layout_marginLeft="40dp"
+            android:gravity="center">
+            <!--验证码  android:clickable="true"设置TextView可点击-->
+            <TextView
+                android:id="@+id/tv_regist_checkcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这是验证码"
+                android:clickable="true"
+                android:onClick="refreshCode" />
+            <EditText
+                android:id="@+id/et_regist_checkcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入验证码"
+                android:maxLength="4"/>
+            <TextView
+                android:id="@+id/tv_regist_msg_checkcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这是验证码判断框"/>
+        </LinearLayout>
+        <!--日期插件-->
+        <!--<DatePicker-->
+            <!--android:id="@+id/dp_regist_birth"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/ll_check"-->
+            <!--android:layout_marginLeft="40dp"-->
+            <!--android:layout_marginRight="40dp"-->
+            <!--android:calendarViewShown="false"-->
+            <!--&gt;-->
+
+        <!--</DatePicker>-->
+
+    </RelativeLayout>
+</ScrollView>
